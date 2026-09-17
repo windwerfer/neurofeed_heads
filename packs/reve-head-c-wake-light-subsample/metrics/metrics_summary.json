@@ -1,0 +1,164 @@
+{
+  "step": "reve_sleep_heads_local",
+  "completed_utc": "2026-09-08T13:44:39.956293+00:00",
+  "encoder": "REVE_frozen",
+  "device": "cpu",
+  "sampling": "REVE local CPU subsample \u226480 windows/class/recording after QC; train undersample balanced (cap 40000). Full encode deferred to Kaggle T4.",
+  "per_class_cap": 80,
+  "backbone_finetuned": false,
+  "n_recordings_cached": 125,
+  "head_a_vig": {
+    "ship_candidate": true,
+    "val_macro_f1": 0.7086264978876446,
+    "test_macro_f1": 0.7831959721361417,
+    "val_acc": 0.7088147903598547,
+    "test_acc": 0.7851525636992766,
+    "test_per_class_f1": {
+      "drowsy": 0.7625999304831421,
+      "hypnagogic": 0.8037920137891411
+    },
+    "val": {
+      "n": 3029,
+      "accuracy": 0.7088147903598547,
+      "macro_f1": 0.7086264978876446,
+      "per_class": {
+        "drowsy": {
+          "precision": 0.7172557172557172,
+          "recall": 0.6858846918489065,
+          "f1": 0.7012195121951219,
+          "support": 1509.0
+        },
+        "hypnagogic": {
+          "precision": 0.7011349306431274,
+          "recall": 0.7315789473684211,
+          "f1": 0.7160334835801675,
+          "support": 1520.0
+        }
+      },
+      "pred_counts": {
+        "drowsy": 1443,
+        "hypnagogic": 1586
+      },
+      "true_counts": {
+        "drowsy": 1509,
+        "hypnagogic": 1520
+      }
+    },
+    "test": {
+      "n": 3179,
+      "accuracy": 0.7851525636992766,
+      "macro_f1": 0.7831959721361417,
+      "per_class": {
+        "drowsy": {
+          "precision": 0.8451463790446841,
+          "recall": 0.694743508549715,
+          "f1": 0.7625999304831421,
+          "support": 1579.0
+        },
+        "hypnagogic": {
+          "precision": 0.7437533227006912,
+          "recall": 0.874375,
+          "f1": 0.8037920137891411,
+          "support": 1600.0
+        }
+      },
+      "pred_counts": {
+        "drowsy": 1298,
+        "hypnagogic": 1881
+      },
+      "true_counts": {
+        "drowsy": 1579,
+        "hypnagogic": 1600
+      }
+    }
+  },
+  "head_c": {
+    "ship_candidate": false,
+    "task": "wake_light_2way_n1slice",
+    "val_macro_f1": 0.7069796102437926,
+    "test_macro_f1": 0.7913432406912848,
+    "test_per_class_f1": {
+      "wake": 0.779003677699766,
+      "light": 0.8036828036828036
+    },
+    "val": {
+      "n": 3029,
+      "accuracy": 0.7071640805546385,
+      "macro_f1": 0.7069796102437926,
+      "per_class": {
+        "wake": {
+          "precision": 0.7153739612188366,
+          "recall": 0.6845593108018555,
+          "f1": 0.69962749746021,
+          "support": 1509.0
+        },
+        "light": {
+          "precision": 0.6996845425867508,
+          "recall": 0.7296052631578948,
+          "f1": 0.7143317230273752,
+          "support": 1520.0
+        }
+      },
+      "pred_counts": {
+        "wake": 1444,
+        "light": 1585
+      },
+      "true_counts": {
+        "wake": 1509,
+        "light": 1520
+      }
+    },
+    "test": {
+      "n": 3179,
+      "accuracy": 0.79207297892419,
+      "macro_f1": 0.7913432406912848,
+      "per_class": {
+        "wake": {
+          "precision": 0.8250708215297451,
+          "recall": 0.7378087397086763,
+          "f1": 0.779003677699766,
+          "support": 1579.0
+        },
+        "light": {
+          "precision": 0.765704584040747,
+          "recall": 0.845625,
+          "f1": 0.8036828036828036,
+          "support": 1600.0
+        }
+      },
+      "pred_counts": {
+        "wake": 1412,
+        "light": 1767
+      },
+      "true_counts": {
+        "wake": 1579,
+        "light": 1600
+      }
+    }
+  },
+  "compare_cbramod_path": "exports/train_heads_expanded_sleep_summary.json",
+  "kaggle_full_encode": "kaggle_kernel_07_reve_sleep_heads (T4 preferred)",
+  "encoder_notes": {
+    "encoder": "REVE-base",
+    "model_id": "/workspace/muse-eeg-heads/kaggle_datasets/muse-eeg-heads-cache/models/reve-base",
+    "positions_id": "/workspace/muse-eeg-heads/kaggle_datasets/muse-eeg-heads-cache/models/reve-positions",
+    "emb_dim": 512,
+    "native_input": "(B, C, T) @ 200 Hz + (B, C, 3) positions",
+    "fed_input": "(B, C, T) @ 256.0 Hz \u2192 resample 200 Hz \u2192 zscore\u00b115",
+    "window_policy": "Keep native window duration after resample (2.0 s @ 256 Hz \u2192 400 samples @ 200 Hz; patch=200 overlap=20 \u2192 2 patches). Not inventing 4 s/5 s from 2 s data.",
+    "channel_order": [
+      "AF7",
+      "AF8",
+      "TP9",
+      "TP10"
+    ],
+    "pool": "attention",
+    "patch_size": 200,
+    "patch_overlap": 20,
+    "target_sr": 200.0,
+    "gated": true,
+    "model_from_local": true,
+    "positions_from_local": true,
+    "license_note": "Gated brain-bzh/reve-base: prefer private muse-eeg-heads-cache offline snapshot; HF_TOKEN hub fallback only. No weight redistribution."
+  }
+}

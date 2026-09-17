@@ -1,0 +1,15 @@
+{
+  "pack_id": "cbramod-a-vig-full",
+  "encoder": "CBraMod",
+  "task": "A-vig",
+  "labels": ["drowsy", "hypnagogic"],
+  "montage": "muse4",
+  "window": "2s @ 256 Hz",
+  "head_file": "heads/head_a_vig_linear.pt",
+  "decode": "argmax",
+  "test_macro_f1": 0.7469,
+  "ship_candidate": true,
+  "sampling": "full corpus subject-holdout",
+  "source_metrics": "muse-eeg-heads/exports/head_a_vig_full_corpus/metrics_summary.json",
+  "encoder_weights": "HF weighting666/CBraMod pretrained_weights.pth (Apache-2.0); do not bundle gated weights"
+}

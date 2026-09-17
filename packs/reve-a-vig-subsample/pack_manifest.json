@@ -1,0 +1,16 @@
+{
+  "pack_id": "reve-a-vig-subsample",
+  "encoder": "REVE-base (frozen, gated)",
+  "task": "A-vig",
+  "labels": ["drowsy", "hypnagogic"],
+  "montage": "muse4",
+  "window": "2s @ 256 Hz",
+  "head_file": "heads/head_a_vig_reve_linear.pt",
+  "decode": "argmax",
+  "test_macro_f1": 0.7832,
+  "ship_candidate": false,
+  "experimental": true,
+  "sampling": "local CPU subsample ≤80 windows/class/recording — NOT fair vs full CBraMod subject-holdout",
+  "license_note": "Publish HEAD ONLY. User must fetch gated REVE-base themselves. Do not redistribute REVE base weights.",
+  "source_metrics": "muse-eeg-heads/exports/reve_sleep_heads_local/metrics_summary.json"
+}

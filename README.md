@@ -13,6 +13,10 @@ This repo is **not** the training lab (`muse-eeg-heads`). It ships what the app 
 | Window corpora / emb caches (GBs) | **Kaggle** private datasets (`muse-eeg-heads-windows`, `muse-eeg-heads-cache`) | Too large for GitHub; training only |
 | Training code / experiments | `muse-eeg-heads` (or future training tree) | R&D, not app runtime |
 
+## Current ≥0.70 packs (for app testing)
+
+See `packs/README.md`. Highlights: **CBraMod A-vig full 0.747** (ship), **CBraMod Head C 0.760** (probe), **REVE subsample A-vig/Head C ~0.78–0.79** (experimental heads-only; user brings gated base).
+
 ## Pack layout
 
 ```

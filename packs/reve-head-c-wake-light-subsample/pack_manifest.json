@@ -1,0 +1,16 @@
+{
+  "pack_id": "reve-head-c-wake-light-subsample",
+  "encoder": "REVE-base (frozen, gated)",
+  "task": "Head C wake/light",
+  "labels": ["wake", "light"],
+  "montage": "muse4",
+  "window": "2s @ 256 Hz n1-slice",
+  "head_file": "heads/head_c_wake_light_reve_linear.pt",
+  "decode": "argmax",
+  "test_macro_f1": 0.7913,
+  "ship_candidate": false,
+  "experimental": true,
+  "sampling": "local CPU subsample ≤80 windows/class/recording — NOT apples-to-apples with full CBraMod",
+  "license_note": "Publish HEAD ONLY. User fetches gated REVE-base. Do not ship REVE base weights.",
+  "source_metrics": "muse-eeg-heads/exports/reve_sleep_heads_local/metrics_summary.json"
+}
