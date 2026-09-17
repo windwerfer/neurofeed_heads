@@ -1,0 +1,120 @@
+{
+  "step": "export_cbramod_packaging",
+  "created_utc": "2026-09-07T01:39:28.857546+00:00",
+  "pack_root": "exports/cbramod_pack",
+  "encoder": {
+    "encoder_name": "CBraMod",
+    "weights_filename": "pretrained_weights.pth",
+    "weights_sha256": "0792cb808c14e6b7a2bb2ce1dff379bc47bc54c49a779825bdfeb33bf8157178",
+    "weights_bytes": 19775842,
+    "license": "Apache-2.0",
+    "hf_repo": "weighting666/CBraMod",
+    "hf_url": "https://huggingface.co/weighting666/CBraMod/resolve/main/pretrained_weights.pth",
+    "code_url": "https://github.com/wjq-learning/CBraMod",
+    "paper": "Wang et al., CBraMod, ICLR 2025 / arXiv:2412.07236",
+    "local_cache_rel": "kaggle_datasets/muse-eeg-heads-cache/models/CBraMod/pretrained_weights.pth",
+    "ship_policy": "Pin checksum in app; fetch Apache-2.0 weights from HF or private muse-eeg-heads-cache. Default publish ships heads + this pin; encoder blob may be redistributed under Apache-2.0 if desired.",
+    "do_not_ship": [
+      "REVE-base gated weights",
+      "LUNA",
+      "BY-NC training mix"
+    ],
+    "frozen": true,
+    "adapter": {
+      "fed_input": "(B, 4, T) @ 256 Hz",
+      "native_input": "(B, C, n_patches, 200) @ 200 Hz",
+      "channel_policy": "keep Muse 4-ch; no fabricated 10-20 montage",
+      "pool": "mean"
+    }
+  },
+  "heads": [
+    {
+      "role": "binary_single_night_baseline",
+      "filename": "head_a_binary_sc4001.pt",
+      "path": "heads/head_a_binary_sc4001.pt",
+      "sha256": "9fc45df990372fed7fdde4499fd91375580cbbd364e08304a1054c339240bae0",
+      "bytes": 3821,
+      "n_classes": 2,
+      "label_list": [
+        "drowsy",
+        "hypnagogic"
+      ],
+      "in_dim": 200,
+      "head_arch": "HeadALinear",
+      "recommended_default": false,
+      "notes": "SC4001 train \u2192 SC4002 holdout binary HeadALinear; raw logits, thresh 0.5",
+      "source_rel": "exports/head_a_holdout/head_a_binary_state_dict.pt"
+    },
+    {
+      "role": "binary_precision_tuned",
+      "filename": "head_a_binary_precision_tuned.pt",
+      "path": "heads/head_a_binary_precision_tuned.pt",
+      "sha256": "32d1972d192daa91b814146c48dd74c7f823384b1da419c0c70b30ad1a474453",
+      "bytes": 3861,
+      "n_classes": 2,
+      "label_list": [
+        "drowsy",
+        "hypnagogic"
+      ],
+      "in_dim": 200,
+      "head_arch": "HeadALinear",
+      "recommended_default": true,
+      "notes": "Same weights family as baseline; preferred binary ship head (hypnagogic P\u2191)",
+      "source_rel": "exports/head_a_holdout/head_a_binary_precision_tuned.pt",
+      "decision_threshold_hypnagogic": 0.53
+    },
+    {
+      "role": "binary_multi_night",
+      "filename": "head_a_binary_multi_night.pt",
+      "path": "heads/head_a_binary_multi_night.pt",
+      "sha256": "220d697ac61e0d5e6fde5f15459892c627b73f5a645133ba8a589f34e2b1758f",
+      "bytes": 3829,
+      "n_classes": 2,
+      "label_list": [
+        "drowsy",
+        "hypnagogic"
+      ],
+      "in_dim": 200,
+      "head_arch": "HeadALinear",
+      "recommended_default": false,
+      "notes": "Train SC4001+SC4011; did not beat single-night all-labeled macro-F1",
+      "source_rel": "exports/head_a_multi_night/head_a_binary_multi_night.pt"
+    },
+    {
+      "role": "four_way_masked_smoke",
+      "filename": "head_a_4way_masked_smoke.pt",
+      "path": "heads/head_a_4way_masked_smoke.pt",
+      "sha256": "905d839ec33c502e2b50bdf48317e34c1dc9bfec6933669505804f71fe9a72ae",
+      "bytes": 5677,
+      "n_classes": 4,
+      "label_list": [
+        "concentration",
+        "mind_wandering",
+        "drowsy",
+        "hypnagogic"
+      ],
+      "in_dim": 200,
+      "head_arch": "HeadALinear",
+      "recommended_default": false,
+      "notes": "Scaffold only: attention classes masked/untrained; not for production yet",
+      "source_rel": "exports/head_a_4way_scaffold/head_a_4way_masked_smoke.pt"
+    }
+  ],
+  "recommended_default_head": "heads/head_a_binary_precision_tuned.pt",
+  "labels_path": "labels.json",
+  "channels_path": "channels.json",
+  "attribution_path": "ATTRIBUTION.md",
+  "app_integration_path": "app_integration.json",
+  "kaggle_private_encoder_cache": "windwerfer/muse-eeg-heads-cache",
+  "ship_notes": [
+    "Heads only in this pack directory (~15 KB total).",
+    "Encoder pin via SHA256; fetch from HF or private cache (19 MB).",
+    "CBraMod Apache-2.0 allows optional encoder redistribution; REVE does not.",
+    "Binary vigilance is ship candidate; 4-way and Head B are not."
+  ],
+  "headline_metrics_ref": {
+    "precision_tuned_sc4002_macro_f1": 0.7552,
+    "single_night_sc4002_macro_f1": 0.7388,
+    "docs": "docs/wave2_writeup.md"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "muse_channels_order": [
+    "AF7",
+    "AF8",
+    "TP9",
+    "TP10"
+  ],
+  "head_a_binary": [
+    "drowsy",
+    "hypnagogic"
+  ],
+  "head_a_4way": [
+    "concentration",
+    "mind_wandering",
+    "drowsy",
+    "hypnagogic"
+  ],
+  "head_b_deferred": [
+    "blink",
+    "double_blink",
+    "jaw",
+    "double_jaw",
+    "clean"
+  ],
+  "sleep_edf_head_a_map": {
+    "Sleep stage W": "drowsy",
+    "Sleep stage 1": "hypnagogic"
+  },
+  "units": "microvolts",
+  "window_sec": 2.0,
+  "input_sr_hz": 256.0,
+  "encoder_native_sr_hz": 200.0,
+  "encoder_patch_samples": 200,
+  "tensor_layout_after_adapter": "(B, 4, n_patches, 200)",
+  "embedding_dim": 200,
+  "pool": "mean over C x patches"
+}

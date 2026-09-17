@@ -1,0 +1,15 @@
+{
+  "order": [
+    "AF7",
+    "AF8",
+    "TP9",
+    "TP10"
+  ],
+  "sleep_edf_proxy": {
+    "AF7": "Fpz-Cz",
+    "AF8": "Fpz-Cz",
+    "TP9": "Pz-Oz",
+    "TP10": "Pz-Oz",
+    "note": "Proxy only; replace with true Muse for domain adaptation"
+  }
+}

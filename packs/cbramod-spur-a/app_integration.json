@@ -1,0 +1,27 @@
+{
+  "package": "cbramod_head_a_v0",
+  "encoder_family": "CBraMod",
+  "encoder_sha256": "0792cb808c14e6b7a2bb2ce1dff379bc47bc54c49a779825bdfeb33bf8157178",
+  "recommended_head": "heads/head_a_binary_precision_tuned.pt",
+  "decision_threshold_hypnagogic": 0.53,
+  "muse_channels": [
+    "AF7",
+    "AF8",
+    "TP9",
+    "TP10"
+  ],
+  "embedding_dim": 200,
+  "window_sec": 2.0,
+  "input_sr_hz": 256.0,
+  "status": "vigilance_binary_ship_candidate",
+  "not_ready": [
+    "head_a_4way (attention untrained)",
+    "head_b artifacts (deferred)",
+    "REVE family (gated; separate pin)"
+  ],
+  "verify_steps": [
+    "sha256sum encoder pretrained_weights.pth == EXPECTED.json",
+    "load HeadALinear(in_dim=200, n_classes=2) from recommended_head",
+    "softmax; if P(hypnagogic) >= 0.53 predict hypnagogic else drowsy"
+  ]
+}
