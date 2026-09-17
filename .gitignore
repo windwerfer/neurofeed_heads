@@ -1,0 +1,15 @@
+# Never commit training corpora or full encoder caches
+**/*.edf
+**/*.npz
+**/emb_cache/
+**/datasets/
+**/windows/
+**/raw/
+*.pth
+!packs/**/heads/*.pt
+# Allow tiny head weights; block large encoder dumps at repo root
+/encoder_weights/
+/cache/
+.DS_Store
+.venv/
+__pycache__/
