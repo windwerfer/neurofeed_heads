@@ -1,0 +1,15 @@
+{
+  "order": [
+    "C3",
+    "C4"
+  ],
+  "n_channels": 2,
+  "montage": "crown2_strong",
+  "hmc_proxy": {
+    "note": "True HMC centrals C3/C4. Heads-only; user brings gated REVE-base.",
+    "source": "PhysioNet hmc-sleep-staging 1.1"
+  },
+  "window_sec": 2.0,
+  "input_sr_hz": 256.0,
+  "units": "microvolts"
+}

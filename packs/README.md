@@ -10,7 +10,14 @@ Windows for retrain/eval live on Hugging Face [`windwerfer/neurofeed-eeg-windows
 | `reve-head-c-wake-light-subsample` | REVE-base | wake/light | **0.791** | no | **Experimental**; subsample metrics |
 | `cbramod-spur-a` | CBraMod | A-vig (older pack) | — | legacy | Earlier SC400-era pack; prefer `cbramod-a-vig-full` |
 
+| `cbramod-a-vig-crown2-hmc` | CBraMod | A-vig Crown2 HMC | **0.670** | **yes** | HMC-only C3/C4; HF `crown2_vigilance_hmc` |
+| `cbramod-a-vig-crown4-hmc` | CBraMod | A-vig Crown4 HMC | **0.680** | **yes** | HMC-only C3/C4/F6/PO4 (F6≈F4, PO4≈O2); HF `crown4_vigilance_hmc` |
+| `reve-a-vig-crown2-hmc` | REVE-base | A-vig Crown2 HMC | **0.649** | yes* | **Experimental** heads-only; user brings gated base |
+| `reve-a-vig-crown4-hmc` | REVE-base | A-vig Crown4 HMC | **0.681** | yes* | **Experimental** heads-only; user brings gated base |
+
 ## REVE license
+
+\* Crown HMC vig packs meet the **≥0.60** HMC Crown vig proxy ship bar. REVE packs remain heads-only / experimental (user brings gated base). Crown **attention** is still not shippable. Never mix with muse4 vig.
 
 Heads-only publish is OK. **Do not** commit REVE-base weights. App must download gated REVE from Hugging Face with the user’s account.
 

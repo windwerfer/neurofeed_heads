@@ -1,0 +1,32 @@
+{
+  "pack_id": "cbramod-a-vig-crown4-hmc",
+  "encoder": "CBraMod",
+  "task": "A-vig",
+  "labels": [
+    "drowsy",
+    "hypnagogic"
+  ],
+  "montage": "crown4_hmc",
+  "n_channels": 4,
+  "channels": [
+    "C3",
+    "C4",
+    "F6",
+    "PO4"
+  ],
+  "window": "2s @ 256 Hz",
+  "head_file": "heads/head_a_vig_linear.pt",
+  "head_sha256": "e2fc53b29ff5c05006022e8c5513559ffaddf05720e908663a01af92d934f8bc",
+  "decode": "argmax",
+  "test_macro_f1": 0.6796,
+  "ship_candidate": true,
+  "sampling": "HMC-only subject-holdout 106/23/22 (seed=42)",
+  "hf_windows_config": "crown4_vigilance_hmc",
+  "source_metrics": "muse-eeg-heads/exports/hmc_crown_vig_compare/crown4_hmc/metrics.json",
+  "encoder_weights": "HF weighting666/CBraMod pretrained_weights.pth (Apache-2.0); pin in encoder/EXPECTED.json",
+  "caveats": [
+    "HMC-only (not Sleep-EDF)",
+    "F6\u2248F4-M1, PO4\u2248O2-M1 (honest HMC proxy).",
+    "Never mix with muse4 vig packs"
+  ]
+}

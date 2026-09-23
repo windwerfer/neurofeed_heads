@@ -1,0 +1,16 @@
+{
+  "head_a_binary": [
+    "drowsy",
+    "hypnagogic"
+  ],
+  "sleep_hmc_head_a_map": {
+    "Sleep stage W": "drowsy",
+    "Sleep stage 1": "hypnagogic",
+    "Sleep stage N1": "hypnagogic"
+  },
+  "units": "microvolts",
+  "window_sec": 2.0,
+  "input_sr_hz": 256.0,
+  "embedding_dim": 512,
+  "decode": "argmax"
+}

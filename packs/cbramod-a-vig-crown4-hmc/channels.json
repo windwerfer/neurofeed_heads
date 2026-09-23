@@ -1,0 +1,17 @@
+{
+  "order": [
+    "C3",
+    "C4",
+    "F6",
+    "PO4"
+  ],
+  "n_channels": 4,
+  "montage": "crown4_hmc",
+  "hmc_proxy": {
+    "note": "F6\u2248F4-M1, PO4\u2248O2-M1 (honest HMC proxy).",
+    "source": "PhysioNet hmc-sleep-staging 1.1"
+  },
+  "window_sec": 2.0,
+  "input_sr_hz": 256.0,
+  "units": "microvolts"
+}
