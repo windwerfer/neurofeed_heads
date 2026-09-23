@@ -1,5 +1,7 @@
 # Packs (macro-F1 ≥ 0.70 for in-app testing)
 
+Windows for retrain/eval live on Hugging Face [`windwerfer/neurofeed-eeg-windows`](https://huggingface.co/datasets/windwerfer/neurofeed-eeg-windows).
+
 | Pack | Encoder | Task | Test macro-F1 | Ship? | Notes |
 |------|---------|------|--------------:|:-----:|-------|
 | `cbramod-a-vig-full` | CBraMod | A-vig drowsy/hypnagogic | **0.747** | **yes** | Full-corpus subject-holdout |
