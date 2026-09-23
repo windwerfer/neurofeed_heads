@@ -2,7 +2,7 @@
 
 Companion to [`windwerfer/neurofeed`](https://github.com/windwerfer/neurofeed): **versioned frozen model packs** (task heads + manifests) for Muse and Crown.
 
-This repo is **not** the training lab (`muse-eeg-heads`, local/unpublished). It ships what the app loads. Related: in-progress [`feedback_gym`](https://github.com/windwerfer/neurofeed/tree/main/feedback_gym).
+This repo is **not** the training lab ([`neurofeed_train`](https://github.com/windwerfer/neurofeed_train)). It ships what the app loads. Related: in-progress [`feedback_gym`](https://github.com/windwerfer/neurofeed/tree/main/feedback_gym).
 
 ## What lives where
 
@@ -12,7 +12,7 @@ This repo is **not** the training lab (`muse-eeg-heads`, local/unpublished). It 
 | CBraMod encoder `pretrained_weights.pth` (~20 MB) | **Hugging Face** (`weighting666/CBraMod`); SHA256-pinned in manifest | Redistributable Apache-2.0; don’t duplicate in every commit |
 | Derived window corpora (NPZ) | **Hugging Face** [`windwerfer/neurofeed-eeg-windows`](https://huggingface.co/datasets/windwerfer/neurofeed-eeg-windows) (`muse4_*`, `crown8_*`; license other); schemas/splits in [`neurofeed_eeg_datasets`](https://github.com/windwerfer/neurofeed_eeg_datasets) | Canonical public share path for retrain/eval |
 | Private GPU scratch (windows mirrors, emb caches) | Kaggle `muse-eeg-heads-windows` / `muse-eeg-heads-cache` / src / aeng — **private training only** | Not for public redistribution; **never publish cache** |
-| Training code / experiments | `muse-eeg-heads` (local/unpublished; a future public train-lab repo is under discussion) | R&D, not app runtime |
+| Training code / experiments | [`neurofeed_train`](https://github.com/windwerfer/neurofeed_train) | R&D train/eval lab, not app runtime |
 
 ## Current ≥0.70 packs (for app testing)
 
