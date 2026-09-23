@@ -21,6 +21,6 @@ Use HF + `neurofeed_eeg_datasets` for retrain/eval and any public redistribution
 | `muse-eeg-heads-windows` | Private window mirrors for GPU jobs | Kaggle **private** — training scratch only |
 | `muse-eeg-heads-cache` (encoders, embeds) | Private emb/model cache (~30 GB local) | Kaggle **private** — **never publish** |
 | Kaggle src / aeng | Private training scratch | Kaggle **private** — not a public share path |
-| Training lab `muse-eeg-heads` | Experiments / encode/train | Local/unpublished (a future public train-lab repo is under discussion) |
+| Training lab [`neurofeed_train`](https://github.com/windwerfer/neurofeed_train) | Experiments / encode/train | Public train/eval lab (code + splits; windows on HF) |
 
 Kaggle T4 kernels remain a convenient heavy encode/train path. They are **not** the canonical source of derived windows. Publish **heads-only** into this repo after metrics land; publish shareable windows to Hugging Face via `neurofeed_eeg_datasets`.
