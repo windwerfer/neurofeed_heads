@@ -41,6 +41,9 @@ App loads a **release tag** (e.g. `packs/cbramod-spur-a@v0.1.0`), verifies head 
 
 ## License / ship policy
 
+- **Original code/docs in this repo** (scripts, docs, pack manifest scaffolding authored here): **[Apache-2.0](LICENSE)** — see [`LICENSE`](LICENSE).
+- **Published head artifacts** (`.pt` heads + pack manifests authored here): also **Apache-2.0**, and still subject to **dataset + encoder attribution** (see each pack’s `ATTRIBUTION.md`).
+- This Apache grant does **not** re-license third-party encoders, gated REVE bases, or training corpora.
 - Prefer open licenses for ship (Apache-2.0 encoder, heads with dataset attribution).
 - Do **not** ship gated REVE base weights or LUNA in this repo.
 - REVE remains optional/experimental in the app, user-local download.
