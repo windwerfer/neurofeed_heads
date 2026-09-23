@@ -16,7 +16,7 @@ This repo is **not** the training lab ([`neurofeed_train`](https://github.com/wi
 
 ## Current ≥0.70 packs (for app testing)
 
-See `packs/README.md`. Highlights: **CBraMod A-vig full 0.747** (ship), **CBraMod Head C 0.760** (probe), **REVE subsample A-vig/Head C ~0.78–0.79** (experimental heads-only; user brings gated base).
+See `packs/README.md`. Highlights: **CBraMod A-vig full 0.747** (ship), **CBraMod Crown HMC vig 0.670/0.680** (ship proxy), **CBraMod Head C 0.760** (probe), **REVE subsample A-vig/Head C ~0.78–0.79** + **REVE Crown HMC vig 0.649/0.681** (experimental heads-only; user brings gated base).
 
 ## Pack layout
 
@@ -37,7 +37,8 @@ App loads a **release tag** (e.g. `packs/cbramod-spur-a@v0.1.0`), verifies head 
 ## Devices
 
 - **Muse (muse4):** AF7/AF8/TP9/TP10 — Spur A / CBraMod A-vig first.
-- **Crown (crown8):** HF has `crown8_*` attention windows; **no shippable Crown packs in this repo yet** (attention LOSO ~chance, `ship_candidate: false`). Do not mix montages in one pack.
+- **Crown vig (HMC proxy):** shippable packs `cbramod-a-vig-crown2-hmc` (test **0.670**) and `cbramod-a-vig-crown4-hmc` (test **0.680**); experimental REVE siblings heads-only. Windows: HF `crown2_vigilance_hmc` / `crown4_vigilance_hmc` (HMC-only; F6≈F4, PO4≈O2). Do **not** mix with muse4 vig.
+- **Crown attention (crown8):** HF has `crown8_*` attention windows; **still not shippable** (attention LOSO ~chance). Do not mix montages in one pack.
 
 ## License / ship policy
 

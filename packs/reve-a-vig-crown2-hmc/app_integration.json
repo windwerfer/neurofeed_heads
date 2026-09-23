@@ -1,0 +1,24 @@
+{
+  "package": "reve-a-vig-crown2-hmc",
+  "encoder_family": "REVE-base",
+  "encoder_note": "User must fetch gated REVE-base separately; not redistributed here",
+  "recommended_head": "heads/head_a_vig_reve_linear.pt",
+  "channels": [
+    "C3",
+    "C4"
+  ],
+  "embedding_dim": 512,
+  "window_sec": 2.0,
+  "input_sr_hz": 256.0,
+  "status": "crown_vigilance_hmc_experimental_heads_only",
+  "hf_windows_config": "crown2_vigilance_hmc",
+  "not_ready": [
+    "do not redistribute REVE-base weights",
+    "crown attention still not shippable"
+  ],
+  "verify_steps": [
+    "user provides gated REVE-base + positions locally",
+    "load linear head (in_dim=512, n_classes=2) from heads/head_a_vig_reve_linear.pt",
+    "argmax over drowsy/hypnagogic logits"
+  ]
+}

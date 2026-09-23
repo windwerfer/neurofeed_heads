@@ -1,0 +1,70 @@
+{
+  "montage": "crown2_strong",
+  "pack": "vigilance_hmc_crown2",
+  "n_channels": 2,
+  "ch_names": [
+    "C3",
+    "C4"
+  ],
+  "n_subjects": 151,
+  "splits": {
+    "n_subjects_ok": 151,
+    "n_train": 106,
+    "n_val": 23,
+    "n_test": 22
+  },
+  "best_val_macro_f1": 0.6466494242546226,
+  "test_macro_f1": 0.6487881296607843,
+  "test": {
+    "n": 54522,
+    "accuracy": 0.6848428157441033,
+    "macro_f1": 0.6487881296607843,
+    "per_class": {
+      "drowsy": {
+        "precision": 0.7913826960840938,
+        "recall": 0.7334528811926238,
+        "f1": 0.7613173868955843,
+        "support": 37363.0
+      },
+      "hypnagogic": {
+        "precision": 0.4993968030561978,
+        "recall": 0.5789964450142783,
+        "f1": 0.5362588724259844,
+        "support": 17159.0
+      }
+    },
+    "confusion_matrix": [
+      [
+        27404,
+        9959
+      ],
+      [
+        7224,
+        9935
+      ]
+    ],
+    "label_list": [
+      "drowsy",
+      "hypnagogic"
+    ],
+    "pred_counts": {
+      "drowsy": 34628,
+      "hypnagogic": 19894
+    },
+    "true_counts": {
+      "drowsy": 37363,
+      "hypnagogic": 17159
+    }
+  },
+  "val_macro_f1": 0.6466494242546226,
+  "ship_candidate": true,
+  "ship_reason": "test macro-F1 0.649 >= 0.6",
+  "ship_bar": 0.6,
+  "created_utc": "2026-09-23T12:22:45.512790+00:00",
+  "encoder": "REVE_frozen",
+  "emb_dim": 512,
+  "pack_id": "reve-a-vig-crown2-hmc",
+  "hf_windows_config": "crown2_vigilance_hmc",
+  "head_sha256": "91215f8d6579c79403c72602568aae64d94af3ca1c509964017b681714e812d4",
+  "experimental": true
+}

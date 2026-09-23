@@ -1,0 +1,26 @@
+{
+  "package": "cbramod-a-vig-crown4-hmc",
+  "encoder_family": "CBraMod",
+  "encoder_sha256": "0792cb808c14e6b7a2bb2ce1dff379bc47bc54c49a779825bdfeb33bf8157178",
+  "recommended_head": "heads/head_a_vig_linear.pt",
+  "channels": [
+    "C3",
+    "C4",
+    "F6",
+    "PO4"
+  ],
+  "embedding_dim": 200,
+  "window_sec": 2.0,
+  "input_sr_hz": 256.0,
+  "status": "crown_vigilance_hmc_ship_candidate",
+  "hf_windows_config": "crown4_vigilance_hmc",
+  "not_ready": [
+    "crown attention (still research / not shippable)",
+    "mixing with muse4 vig windows"
+  ],
+  "verify_steps": [
+    "sha256sum encoder pretrained_weights.pth == encoder/EXPECTED.json",
+    "load HeadAVigLinear(in_dim=200, n_classes=2) from heads/head_a_vig_linear.pt",
+    "argmax over drowsy/hypnagogic logits"
+  ]
+}

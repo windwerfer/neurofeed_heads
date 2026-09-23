@@ -1,0 +1,32 @@
+{
+  "pack_id": "reve-a-vig-crown2-hmc",
+  "encoder": "REVE-base (frozen, gated)",
+  "task": "A-vig",
+  "labels": [
+    "drowsy",
+    "hypnagogic"
+  ],
+  "montage": "crown2_strong",
+  "n_channels": 2,
+  "channels": [
+    "C3",
+    "C4"
+  ],
+  "window": "2s @ 256 Hz",
+  "head_file": "heads/head_a_vig_reve_linear.pt",
+  "head_sha256": "91215f8d6579c79403c72602568aae64d94af3ca1c509964017b681714e812d4",
+  "decode": "argmax",
+  "test_macro_f1": 0.6488,
+  "ship_candidate": true,
+  "experimental": true,
+  "sampling": "HMC-only subject-holdout 106/23/22 (seed=42); full encode after QC",
+  "license_note": "Publish HEAD ONLY. User must fetch gated REVE-base themselves. Do not redistribute REVE base weights.",
+  "hf_windows_config": "crown2_vigilance_hmc",
+  "source_metrics": "muse-eeg-heads/exports/hmc_crown_vig_reve/crown2_strong/metrics.json",
+  "caveats": [
+    "HMC-only (not Sleep-EDF)",
+    "True HMC centrals C3/C4. Heads-only; user brings gated REVE-base.",
+    "Heads-only; user brings REVE-base",
+    "Never mix with muse4 vig packs"
+  ]
+}
